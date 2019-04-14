@@ -34,4 +34,9 @@ public class RequestLog implements Serializable {
     public LocalDateTime getCreated() {
         return created;
     }
+
+    @PrePersist
+    public void prePersist() {
+        this.created = LocalDateTime.now();
+    }
 }
