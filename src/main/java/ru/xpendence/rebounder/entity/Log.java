@@ -1,5 +1,6 @@
 package ru.xpendence.rebounder.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +20,7 @@ import java.time.LocalDateTime;
 @Table(name = "request_logs")
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestLog implements Serializable {
+public class Log implements Serializable {
 
     private Long id;
     private LocalDateTime created;
@@ -31,6 +32,7 @@ public class RequestLog implements Serializable {
     }
 
     @Column
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     public LocalDateTime getCreated() {
         return created;
     }
