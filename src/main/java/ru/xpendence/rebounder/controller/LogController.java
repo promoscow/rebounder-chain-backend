@@ -28,7 +28,6 @@ public class LogController {
 
     @PostMapping
     public ResponseEntity<Log> save(@RequestBody Log log) {
-        ResponseEntity<Log> ok = ResponseEntity.ok(repository.save(log));
-        return ok;
+        return ResponseEntity.ok(repository.save(log));
     }
 }
