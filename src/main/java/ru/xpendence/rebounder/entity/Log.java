@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -20,6 +21,7 @@ import java.time.LocalDateTime;
 @Table(name = "request_logs")
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Log implements Serializable {
 
     private Long id;
