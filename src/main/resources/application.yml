@@ -3,5 +3,5 @@ spring:
   profiles:
     active: remote
 
-server:
-  port: 8081
+#server:
+#  port: 8081
