@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.xpendence.rebounder.entity.Log;
 import ru.xpendence.rebounder.repository.LogRepository;
 
+import java.util.logging.Logger;
+
 /**
  * Author: Vyacheslav Chernyshov
  * Date: 14.04.19
@@ -17,6 +19,7 @@ import ru.xpendence.rebounder.repository.LogRepository;
 @RestController
 @RequestMapping("/log")
 public class LogController {
+    private final static Logger LOG = Logger.getLogger(LogController.class.getName());
 
     private final LogRepository repository;
 
@@ -27,6 +30,8 @@ public class LogController {
 
     @GetMapping
     public ResponseEntity<Log> log() {
-        return ResponseEntity.ok(repository.save(new Log()));
+        Log log = repository.save(new Log());
+        LOG.info("saved new log: " + log.toString());
+        return ResponseEntity.ok(log);
     }
 }
