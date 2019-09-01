@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web:
+  rebounder-chain-frontend:
     build:
       context: ../rebounder-chain-frontend
       dockerfile: Dockerfile
@@ -9,9 +9,9 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-#  :
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#      ports:
-#        - "8099:8099"
+  rebounder-chain-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "8099:8099"
