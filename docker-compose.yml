@@ -1,6 +1,6 @@
 version: '3'
 services:
-  rebounder-chain-frontend:
+  frontend:
     build:
       context: ../rebounder-chain-frontend
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-  rebounder-chain-backend:
+  backend:
     build:
       context: .
       dockerfile: Dockerfile
